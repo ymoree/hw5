@@ -1,0 +1,83 @@
+section
+  background: #eeeeee
+  h1
+    padding: 5px 10px
+    margin: 0 0 0 17px
+  button
+    margin: 0 40px 0 0
+    padding: 7px 10px
+    border: none
+    outline: none
+    &:focus
+      border: none
+      outline: none
+    &:hover
+      color: darkblue
+    .icon
+      margin-right: 5px
+
+
+table
+  tr:nth-child(even)
+    td
+      button
+        background: white
+  td
+    button
+      border: none
+
+.b-animation__preloader
+  width: 40%
+  background: black
+  z-index: 10
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translateX(-50%)
+  div
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    span
+      display: block
+      height: 12px
+      width: 12px
+      background: #000
+      margin: 0 4px
+      border-radius: 10px
+      animation: 1.2s upDown infinite
+      &:first-child
+        animation-delay: .15s
+
+      &:nth-child(2)
+        animation-delay: .30s
+
+      &:nth-child(3)
+        animation-delay: .45s
+
+      &:nth-child(4)
+        animation-delay: .60s
+
+      &:last-child
+        animation-delay: .75s
+
+@keyframes upDown
+  0%
+    height: 12px
+    background: #00bdad
+  50%
+    height: 45px
+    background: #006db5
+  100%
+    height: 12px
+    background: #0011ad
+
+.red
+  color: red
+
+
+

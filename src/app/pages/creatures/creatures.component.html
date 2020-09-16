@@ -1,0 +1,38 @@
+<div class="bg">
+  <div class="wrap">
+    <section>
+      <div class="row d-flex justify-content-between">
+        <h1>Pokemons</h1>
+        <button class="btn btn-outline-danger" (click)="openModal()"><i class="fas fa-plus icon"></i>Add</button>
+      </div>
+    </section>
+    <div class="b-animation__preloader" *ngIf="firestore.showSpinner">
+      <div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Api url for more info</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let pokemon of pokemonService.pokemons">
+        <td scope="row">{{ pokemon.name }}</td>
+        <td>{{pokemon.url}}</td>
+        <td>
+          <button class="btn btn-outline-light" (click)="openModal(pokemon)">Edit</button>
+          <button class="btn btn-outline-light" (click)="openDeleteModal(pokemon)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

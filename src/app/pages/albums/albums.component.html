@@ -1,0 +1,39 @@
+<section>
+  <div class="row d-flex justify-content-between">
+    <h1>Albums</h1>
+    <button (click)="openModal()"><i class="fas fa-plus icon"></i>Add</button>
+  </div>
+</section>
+<div class="b-animation__preloader" *ngIf="albumsService.showSpinner">
+  <div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Band</th>
+    <th scope="col">Genre</th>
+    <th scope="col">Label</th>
+    <th scope="col">Producer</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let album of albumsService.albums">
+    <th scope="row">{{ album.name }}</th>
+    <td>{{ album.band }}</td>
+    <td>{{ album.genre }}</td>
+    <td>{{ album.label }}</td>
+    <td>{{ album.producer }}</td>
+    <td>
+      <button (click)="openModal(album)"><i class="fas fa-pen" title="Edit"></i></button>
+      <button (click)="openDeleteModal(album)"><i class="fas fa-trash-alt red" title="Delete"></i></button>
+    </td>
+  </tr>
+  </tbody>
+</table>
