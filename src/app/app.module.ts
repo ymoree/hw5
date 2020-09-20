@@ -39,6 +39,7 @@ import { PokeModalComponent } from './pages/creatures/poke-modal/poke-modal.comp
     MatIconModule,
     MatButtonModule,
     AngularFirestoreModule,
+    // @ts-ignore
     AngularFireModule.initializeApp(environment.firebase),
     ToastrModule.forRoot(),
     FormsModule,
